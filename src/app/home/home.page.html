@@ -1,20 +1,51 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="green">
     <ion-title>
-      Blank
+      Components
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-segment value="all" color="danger">
+    <ion-segment-button value="all" >
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="favorites" >
+      <ion-label>Favorites</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-searchbar color=""></ion-searchbar>
+  <ion-toggle [enableOnOffLabels]="true">Enable Notifications</ion-toggle>
+  <ion-list>
+    <ion-item>
+      <ion-select aria-label="Fruit" interface="popover" placeholder="Select fruit">
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="presentToast('bottom')">Present Toast At the Bottom</ion-button>
+
+
 </ion-content>
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button color="danger">
+    <ion-icon name="chevron-up-circle"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="blue">
+      <ion-icon name="document"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="danger">
+      <ion-icon name="language-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="green">
+      <ion-icon name="globe"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
